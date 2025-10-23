@@ -1,0 +1,28 @@
+
+doctype html
+html 
+    head 
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body    
+    h1 Create hobby
+        hr
+        br
+        form(action="http://localhost:3000/update-cobj" method="POST")
+            label(for="name") Name:
+            input(type="text" id="name" name="name" required)
+            br
+
+            label(for="time_from_first_start_in_years") Time from first start in years:
+            input(type="number" id="time_from_first_start_in_years" name="time_from_first_start_in_years" min=0 max=120)
+            br
+
+            label(for="how_inspired_you_to_start") Who inspired you to start:
+            input(type="text" id="how_inspired_you_to_start" name="how_inspired_you_to_start")
+            br
+
+            button.submit(type="submit") Create
+        br
+        br
+        a.return(href="/") Return to the homepage

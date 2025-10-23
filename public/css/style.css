@@ -43,7 +43,7 @@ h1 {
 label, input {
     margin-top: 5px;
     display: block;
-    font-size: inherit;
+    font-size: 20px;
 }
 
 input[type="text"] {
@@ -55,4 +55,18 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+a.return {
+    text-decoration: none;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10px 5px;
+}
+
+a.return:hover
+{
+    background-color: lightblue;
+    color:blue;
 }
