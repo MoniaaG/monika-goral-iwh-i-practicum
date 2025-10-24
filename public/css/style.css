@@ -57,16 +57,40 @@ input[type="submit"] {
     margin-top: 10px;
 }
 
+button.submit {
+    font-size: 20px;
+    background-color: lightgreen;
+    border-radius: 2px;
+    padding: 10px 5px;
+}
+
 a.return {
     text-decoration: none;
     color: black;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid black;
     padding: 10px 5px;
+    font-size: 20px;
 }
 
 a.return:hover
 {
     background-color: lightblue;
     color:blue;
+}
+
+.table {
+    margin-top: 10px;
+}
+
+.table thead tr {
+    border: 1px solid lightcoral;
+    background-color: lightcoral;
+    text-align: center;
+}
+
+
+.table tbody tr td {
+    border: 1px solid black;
+    text-align: left;
 }
