@@ -22,7 +22,7 @@ app.get('/', async (req, res) => {
     try {
         const resp = await axios.get(hobbies, { headers });
         const data = resp.data.results;
-        res.render('hobbies', { title: 'Hobbies | HubSpot APIs', data });      
+        res.render('homepage', { title: 'Homepage', data });
     } catch (error) {
         console.error(error);
     }
@@ -38,7 +38,7 @@ app.get('/update-cobj', (req, res) => {
 // TODO: ROUTE 3 - Create a new app.post route for the custom objects form to create or update your custom object data. Once executed, redirect the user to the homepage.
 
 // * Code for Route 3 goes here
-app.post('/update-cobj', (req, res) => {
+app.post('/update-cobj', async (req, res) => {
     const create = {
         properties: {
             "name": req.body.name,
@@ -47,22 +47,21 @@ app.post('/update-cobj', (req, res) => {
         }
     }
 
+    const createHobby = `https://api.hubapi.com/crm/v3/objects/2-193739812`;
+    const headers = {
+        Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
+        'Content-Type': 'application/json'
+    };
 
-    //const createHobby = req.query.email;
-    // const createHobby = `https://api.hubapi.com/crm/v3/objects/2-193739812`;
-    // const headers = {
-    //     Authorization: `Bearer ${PRIVATE_APP_ACCESS}`,
-    //     'Content-Type': 'application/json'
-    // };
-
-    // try { 
-    //     await axios.post(createHobby, create, { headers } );
-    //     res.redirect('back');
-    // } catch(err) {
-    //     console.error(err);
-    // }
+    try { 
+        await axios.post(createHobby, create, { headers } );
+        res.redirect('/');
+    } catch(err) {
+        console.error(err);
+    }
 
 });
+
 /** 
 * * This is sample code to give you a reference for how you should structure your calls. 
 
